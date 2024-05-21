@@ -1,0 +1,87 @@
+<section class="hero is-warning is-bold">
+  <div class="hero-body">
+    <div class="">
+      <h1 class="title">
+     Liste des coaches
+      </h1>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <nav class="panel is-warning">
+      <p class="panel-heading is-italic">
+        Recherche
+      </p>
+      <div class="panel-block">
+          <p class="control has-icons-left">
+              <input class="input" type="text" placeholder="CIN" [(ngModel)]="srch.cin">
+              <span class="icon is-left">
+                <i class="fas fa-search" aria-hidden="true"></i>
+              </span>
+            </p>
+        <p class="control has-icons-left">
+          <input class="input" type="text" placeholder="Nom" [(ngModel)]="srch.nom">
+          <span class="icon is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+        </p>
+        <p class="control has-icons-left">
+          <input class="input" type="text" placeholder="Numero" [(ngModel)]="srch.tel">
+          <span class="icon is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+        </p>
+      </div>
+      </nav>
+      <br><br>
+      <button class="x button is-link  "routerLink="/addcoach" >
+          <p><i class="fas fa-user-plus"></i> Ajouter un coach</p>
+          </button>
+          <i class="fa " style="font-size:50px" ><a class="y" (click)=tp()>	&#xf2b9;</a></i>
+          <span class='y badge badge-warning' id='lblCartCount'> {{number}} </span>
+          
+<table class="table is-fullwidth is-fullheight-with-navbar">
+  <thead class="has-text-centered ">
+    <tr>
+      <th></th>
+      <th>CIN</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Telephone</th>
+      <th>E-mail</th>
+      <th>Categorie</th>
+      <th class="has-text-centered">Options</th>
+    </tr>
+  </thead>
+  <tfoot>
+  </tfoot>
+  <tbody>
+      <tr *ngFor="let std of coaches | filterBy:srch">
+          <td>
+            <figure class="image is-128x128">
+              <img  class=" is-rounded" src={{std.img}}>
+            </figure>
+          </td>
+          <td>
+              {{std.cin}}
+          </td>
+          <td>
+              {{std.nom}}
+          </td>
+          <td>
+              {{std.prenom}}
+          </td>
+          <td>
+              {{std.tel}}
+          </td>
+          <td>
+              {{std.email}}
+          </td>
+          <td>
+            {{std.categorie}}
+        </td>
+          <td colspan="2">
+              <input (click)="delete(std)" class="button is-danger is-outlined is-rounded is-danger is-light is-fullwidth" type="button" value="Archiver">
+          </td>
+      </tr>
+  </tbody>

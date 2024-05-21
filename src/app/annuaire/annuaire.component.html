@@ -1,0 +1,103 @@
+<section class="hero is-danger is-bold ">
+    <div class="hero-body">
+      <div class="">
+        <h1 class="title">
+         Offres
+        </h1>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <nav class="panel is-danger">
+        <p class="panel-heading is-italic">
+          Recherche
+        </p>
+        <div class="panel-block">
+          <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Type de Bien" [(ngModel)]="srch.Type_T">
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
+          <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Type Annonce" [(ngModel)]="srch.Type_A">
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
+          <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Superficie" [(ngModel)]="srch.Superficie">
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
+          <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Loyer" [(ngModel)]="srch.loyer">
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
+          <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Status" [(ngModel)]="srch.Status">
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
+        </div>
+        </nav>
+<table class="table is-fullwidth is-fullheight-with-navbar">
+    <thead class="has-text-centered ">
+      <tr>
+        <th class="has-text-centered">ID Annonce</th>
+        <th class="has-text-centered">Type de bien </th>
+        <th class="has-text-centered">Type annonce</th>
+        <th class="has-text-centered">Gouvernorat</th>
+        <th class="has-text-centered">Ville</th>
+        <th class="has-text-centered">Superficie</th>
+        <th class="has-text-centered">Nombre de chambres</th>
+        <th class="has-text-centered">Loyer</th>
+        <th class="has-text-centered">Date d'ajout</th>
+        <th class="has-text-centered">Validité</th>
+        <th class="has-text-centered">Options</th>
+      </tr>
+    </thead>
+    <tfoot>
+    </tfoot>
+    <tbody>
+        <tr *ngFor="let std of house| filterBy:srch">
+            <td class="has-text-centered">
+                {{std.ID_A}}
+            </td>
+            <td class="has-text-centered">
+                {{std.Type_T}}
+            </td>
+            <td class="has-text-centered">
+                {{std.Type_A}}
+            </td>
+            <td class="has-text-centered">
+                {{std.Gouvernorat}}
+            </td>
+            <td class="has-text-centered">
+                {{std.Ville}}
+            </td>
+            <td class="has-text-centered">
+                {{std.Superficie}}
+            </td>
+            <td class="has-text-centered">
+                {{std.Nbr_Ch}}
+            </td>
+            <td class="has-text-centered">
+                {{std.Loyer}}
+            </td>
+            <td class="has-text-centered">
+                {{std.D_Ann}}
+            </td>
+            <td class="has-text-centered">
+                {{std.Validite}}
+            </td>
+            <td >
+                <input (click)=contact(std) class="button is-info is-outlined is-rounded is-light is-fullwidth"  type="button" value="Consulter">
+            </td>
+        </tr>
+        <br><br><br>
+    </tbody>

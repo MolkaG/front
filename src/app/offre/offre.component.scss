@@ -1,0 +1,42 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+  }
+  .x{
+    position:absolute;
+    transition: .5s ease;
+    top: 48%;
+    left: 84%;
+    border-radius: 4rem;
+    
+}
+.y{
+  position:absolute;
+  transition: .5s ease;
+  top: 48%;
+  right: 90%;
+  border-radius: 4rem;
+  
+}
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+}

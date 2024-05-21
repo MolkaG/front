@@ -1,0 +1,40 @@
+<section class="hero is-info is-bold is-fullheight-with-navbar">
+    <div class="hero-body">
+      <div class="">
+        <h1 class="title">
+        Mes Offres
+        </h1>
+      </div>
+    </div>
+  </section>
+  <section class="section is-fullheight-with-navbar">
+        <button class=" button is-success is-rounded " routerLink="/add">
+            <p><i class="fas fa-user-plus"   ></i> Ajouter une offre</p>
+            </button><br><br>
+<table class="table is-fullwidth is-fullheight-with-navbar">
+    <thead class="has-text-centered ">
+      <tr>
+        <th>Type de bien</th>
+        <th>Type Annonce</th>
+        <th>Ville</th>
+        <th class="has-text-centered">Options</th>
+      </tr>
+    </thead>
+    <tfoot>
+    </tfoot>
+    <tbody  >
+        <tr *ngFor="let std of emps | filterBy:srch">
+            <td>
+                {{std.Type_T}}
+            </td>
+            <td>
+                {{std.Type_A}}
+            </td>
+            <td>
+                {{std.Ville}}
+            </td>
+            <td colspan="2">
+                <input (click)="delete(std)" class="button is-danger is-outlined is-rounded is-danger is-light is-fullwidth" type="button" value="Supprimer">
+            </td>
+        </tr>
+    </tbody>

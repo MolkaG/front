@@ -1,0 +1,209 @@
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="">
+        <h1 class="title">
+         Veuillez remplir le formulaire de l'annonce
+        </h1>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <form [formGroup]="addform" #cf="ngForm">
+        <div class="field">
+            <label class="label">Type de Bien</label>
+            <div class="control">
+              <div class="select  is-fullwidth">
+                <select name="datatype" id="datatype">
+                  <!--the ngFor of the variable dataTypes-->
+                   <option *ngFor="let dataType of options1;let dataIndex=index"
+                       [ngValue]="dataIndex">{{dataType}}
+                   </option>
+           </select>
+              </div>
+            </div>  
+        </div>
+  <div class="field">
+    <label class="label">Type Annonce</label>
+    <div class="control">
+      <div class="select  is-fullwidth">
+        <select name="datatype" id="datatype">
+          <!--the ngFor of the variable dataTypes-->
+           <option *ngFor="let dataType of options2;let dataIndex=index"
+               [ngValue]="dataIndex">{{dataType}}
+           </option>
+   </select>
+      </div>
+    </div>  
+</div>
+    <div class="field">
+      <label class="label">Gouvernorat</label>
+      <div class="control">
+        <input 
+          type="text"
+          class="input"
+          name="nom" 
+          formControlName="nom"
+          placeholder="e.g  Smith"
+          [pattern]='chpat'
+          >
+      </div>
+    </div>
+    <div class="help is-danger has-text-centered" *ngIf=" addform.get('nom').untouched">
+        *Ce champ est obligatoire*
+      </div>
+      <div class="help is-danger has-text-centered" *ngIf="addform.get('nom').invalid && addform.get('nom').touched">  
+        *Nom invalide*  
+    </div> 
+    <div class="field">
+        <label class="label">Ville</label>
+        <div class="control">
+          <input 
+            type="text"
+            class="input"
+            name="prenom" 
+            formControlName="prenom"
+            placeholder="e.g Alex "
+            [pattern]='chpat'
+            >
+      </div>
+    </div>
+    <div class="help is-danger has-text-centered" *ngIf=" addform.get('prenom').untouched">
+        *Ce champ est obligatoire*
+      </div>
+      <div class="help is-danger has-text-centered" *ngIf="addform.get('prenom').invalid && addform.get('prenom').touched">  
+        *Prenom invalide*  
+    </div>
+    <div class="field">
+      <label class="label">Adresse</label>
+      <div class="control">
+        <input 
+          type="text"
+          class="input"
+          name="R_SC" 
+          formControlName="R_SC"
+          placeholder="e.g Alex "
+          [pattern]='chpat'
+          >
+    </div>
+  </div>
+  <div class="help is-danger has-text-centered" *ngIf=" addform.get('R_SC').untouched">
+      *Ce champ est obligatoire*
+    </div>
+    <div class="help is-danger has-text-centered" *ngIf="addform.get('R_SC').invalid && addform.get('R_SC').touched">  
+      *Ce champ doit contenir au maximum 30 caracteres*   
+  </div> 
+  <div class="field">
+    <label class="label">Superficie</label>
+    <div class="control">
+      <input 
+        type="text"
+        class="input"
+        name="adresse" 
+        formControlName="adresse"
+        >
+        <div class="help is-danger has-text-centered" *ngIf=" addform.get('adresse').untouched">
+          *Ce champ est obligatoire*
+        </div>
+  </div>
+  <div class="help is-danger has-text-centered" *ngIf="addform.get('adresse').invalid && addform.get('adresse').touched">  
+    *Ce champ doit contenir au maximum 30 caracteres*  
+</div>  
+  <div class="field">
+    <label class="label">Nombre de chambres</label>
+    <div class="control">
+      <input 
+        type="text"
+        class="input"
+        name="ville" 
+        formControlName="ville"
+        [pattern]='chpat'
+        >
+  </div>
+</div>
+<div class="help is-danger has-text-centered" *ngIf=" addform.get('ville').untouched">
+  *Ce champ est obligatoire*
+</div>
+<div class="help is-danger has-text-centered" *ngIf="addform.get('ville').invalid && addform.get('ville').touched">  
+  *Ce champ doit contenir au maximum 30 caracteres*  
+</div>  
+<div class="field">
+    <label class="label">Type Annonce</label>
+    <div class="control">
+      <div class="select  is-fullwidth">
+        <select name="datatype" id="datatype">
+          <!--the ngFor of the variable dataTypes-->
+           <option *ngFor="let dataType of options3;let dataIndex=index"
+               [ngValue]="dataIndex">{{dataType}}
+           </option>
+   </select>
+      </div>
+    </div>  
+</div>
+    <div class="field">
+      <label class="label">Descriptif</label>
+      <div class="control">
+        <textarea class="textarea" placeholder="e.g. Hello world"></textarea>
+      </div>
+    </div>
+    <div class="help is-danger has-text-centered" *ngIf=" addform.get('mail').untouched">
+        *Ce champ est obligatoire*
+      </div>
+      <div class="help is-danger has-text-centered" *ngIf="addform.get('mail').invalid && addform.get('mail').touched">  
+        *E-Mail invalide*  
+    </div>  
+  </div>
+  <div class="field">
+    <label class="label">Loyer</label>
+    <div class="control">
+      <input 
+        type="text"
+        class="input"
+        name="ville" 
+        formControlName="ville"
+        [pattern]='chpat'
+        >
+  </div>
+</div>
+<div class="help is-danger has-text-centered" *ngIf=" addform.get('ville').untouched">
+  *Ce champ est obligatoire*
+</div>
+<div class="help is-danger has-text-centered" *ngIf="addform.get('ville').invalid && addform.get('ville').touched">  
+  *Ce champ doit contenir au maximum 30 caracteres*  
+</div> 
+<div class="field">
+    <label class="label">Validité</label>
+    <div class="control">
+      <input 
+        type="text"
+        class="input"
+        name="ville" 
+        formControlName="ville"
+        [pattern]='chpat'
+        >
+  </div>
+</div>
+<div class="help is-danger has-text-centered" *ngIf=" addform.get('ville').untouched">
+  *Ce champ est obligatoire*
+</div>
+<div class="help is-danger has-text-centered" *ngIf="addform.get('ville').invalid && addform.get('ville').touched">  
+  *Ce champ doit contenir au maximum 30 caracteres*  
+</div> 
+<div class="field">
+    <label class="label">Date d'ajout</label>
+    <div class="control">
+        <input class="input" type="date">
+  </div>
+</div>
+<div class="help is-danger has-text-centered" *ngIf=" addform.get('ville').untouched">
+  *Ce champ est obligatoire*
+</div>
+<div class="help is-danger has-text-centered" *ngIf="addform.get('ville').invalid && addform.get('ville').touched">  
+  *Ce champ doit contenir au maximum 30 caracteres*  
+</div> 
+    <div class="control">
+      <button type="submit" (click)="onSubmit()" class="button is-primary"
+      [disabled]="cf.invalid">Enregistrer</button>
+      <button type="reset" class="button is-light" >Annuler</button>
+    </div>
+    </form>
+  </section>

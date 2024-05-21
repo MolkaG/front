@@ -1,0 +1,234 @@
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="">
+        <h1 class="title">
+         Veuillez remplir le formulaire d'inscription
+        </h1>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <form [formGroup]="addform" #cf="ngForm">
+      
+      <div class="field">
+        <label class="label">CIN</label>
+        <div class="control">
+        <input 
+        type="text"
+        class="input"
+        name="cin"
+        [pattern]='cinpat' 
+        formControlName="cin">
+      </div>
+    </div>
+    <div class="help is-danger has-text-centered" *ngIf=" addform.get('cin').untouched">
+        *Ce champ est obligatoire*
+      </div>
+      <div class="help is-danger has-text-centered" *ngIf="addform.get('cin').invalid && addform.get('cin').touched">  
+        *CIN invalide*  
+    </div> 
+    <div class="field">
+      <label class="label">Mot de passe</label>
+      <div class="control">
+        <input 
+          type="text"
+          class="input"
+          name="passwrd" 
+          formControlName="passwrd"
+          placeholder="Votre mot de passe "
+          [pattern]='mdpat'
+          >
+    </div>
+  </div>
+  <p class="help is-info is-bold">Ce champ doit contenir au moins 4 caracteres </p>
+  <div class="help is-danger has-text-centered" *ngIf=" addform.get('passwrd').untouched">
+    *Ce champ est obligatoire*
+  </div>
+  <div class="help is-danger has-text-centered" *ngIf="addform.get('passwrd').invalid && addform.get('passwrd').touched">  
+    *Mot de passe invalide*  
+</div> 
+
+    <div class="field">
+      <label class="label">Nom</label>
+      <div class="control">
+        <input 
+          type="text"
+          class="input"
+          name="nom" 
+          formControlName="nom"
+          placeholder="e.g  Smith"
+          [pattern]='chpat'
+          >
+      </div>
+    </div>
+    <div class="help is-danger has-text-centered" *ngIf=" addform.get('nom').untouched">
+        *Ce champ est obligatoire*
+      </div>
+      <div class="help is-danger has-text-centered" *ngIf="addform.get('nom').invalid && addform.get('nom').touched">  
+        *Nom invalide*  
+    </div> 
+    <div class="field">
+        <label class="label">Prenom</label>
+        <div class="control">
+          <input 
+            type="text"
+            class="input"
+            name="prenom" 
+            formControlName="prenom"
+            placeholder="e.g Alex "
+            [pattern]='chpat'
+            >
+      </div>
+    </div>
+    <div class="help is-danger has-text-centered" *ngIf=" addform.get('prenom').untouched">
+        *Ce champ est obligatoire*
+      </div>
+      <div class="help is-danger has-text-centered" *ngIf="addform.get('prenom').invalid && addform.get('prenom').touched">  
+        *Prenom invalide*  
+    </div>
+    <div class="field">
+      <label class="label">Age</label>
+      <div class="control">
+        <input 
+          type="number"
+          class="input"
+          name="age" 
+          formControlName="age"
+          >
+    </div>
+  </div>
+  <div class="help is-danger has-text-centered" *ngIf=" addform.get('age').untouched">
+      *Ce champ est obligatoire*
+    </div>
+    <div class="help is-danger has-text-centered" *ngIf="addform.get('age').invalid && addform.get('age').touched">  
+      *Veuillez donner un age valide*   
+  </div> 
+    <label class="label">Poids</label>
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field is-expanded">
+              <div class="field has-addons">
+                <p class="control is-expanded">
+                  <input 
+                  type="number"
+                  class="input has-text-centered"
+                  name="Poids" 
+                  formControlName="poids"
+                  >
+                </p>
+                <p class="control">
+                  <a class="button is-static">
+                    Kg
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="help is-danger has-text-centered" *ngIf=" addform.get('poids').untouched">
+          *Ce champ est obligatoire*
+        </div>
+  <div class="help is-danger has-text-centered" *ngIf="addform.get('poids').invalid && addform.get('poids').touched">  
+    *Veuillez donner un poids valide*  
+</div>  
+<label class="label">Taille</label>
+<div class="field is-horizontal">
+  <div class="field-body">
+    <div class="field is-expanded">
+      <div class="field has-addons">
+        <p class="control is-expanded">
+          <input 
+          type="number"
+          class="input has-text-centered"
+          name="Taille" 
+          formControlName="taille"
+          >
+        </p>
+        <p class="control">
+          <a class="button is-static">
+            Cm
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="help is-danger has-text-centered" *ngIf=" addform.get('taille').untouched">
+  *Ce champ est obligatoire*
+</div>
+<div class="help is-danger has-text-centered" *ngIf="addform.get('taille').invalid && addform.get('taille').touched">  
+  *Veuillez donner une taille valide*  
+</div>  
+    <div class="label">Numero Personnel</div>
+    <div class="field is-horizontal">
+      <div class="field-body">
+        <div class="field is-expanded">
+          <div class="field has-addons">
+            <p class="control">
+              <a class="button is-static">
+                +216
+              </a>
+            </p>
+            <p class="control is-expanded">
+              <input 
+              type="text"
+              class="input"
+              name="mobileNumber" 
+              formControlName="tel"
+              [pattern]='numpat'
+              > 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="help is-danger has-text-centered" *ngIf=" addform.get('tel').untouched">
+        *Ce champ est obligatoire*
+      </div>
+      <div class="help is-danger has-text-centered" *ngIf="addform.get('tel').invalid && addform.get('tel').touched">  
+        *Numero invalide*  
+    </div> 
+ 
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <input
+          type="email"  
+          name="email"
+          formControlName="email"
+          class="input" 
+          placeholder="e.g. alexsmith@gmail.com">
+      </div>
+    </div>
+    <div class="help is-danger has-text-centered" *ngIf=" addform.get('email').untouched">
+        *Ce champ est obligatoire*
+      </div>
+      <div class="help is-danger has-text-centered" *ngIf="addform.get('email').invalid && addform.get('email').touched">  
+        *E-Mail invalide*  
+    </div>  
+
+  <label class="label">Image </label>
+  <div class="file has-name is-fullwidth">
+    <label class="file-label">
+      <input class="file-input" type="file" accept="image/*" (change)="onFileChanged($event)" >
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          Choose a file…
+        </span>
+      </span>
+      <span class="file-name">
+       {{x}}
+      </span>
+    </label>
+  </div>
+  <br><br>
+    <div class="control">
+      <button type="submit" (click)="onSubmit()" class="button is-primary"
+      [disabled]="cf.invalid">Enregistrer</button>
+      <button type="reset" class="button is-light" >Annuler</button>
+    </div>
+    </form>
+  </section>

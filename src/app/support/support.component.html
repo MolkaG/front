@@ -1,0 +1,70 @@
+<section class="container">
+    <br><br><br><br>
+  
+  
+  <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Objet :</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <input class="input" type="text" placeholder="e.g. Partnership opportunity">
+          </div>
+  
+        </div>
+      </div>
+    </div>
+    
+    <div class="field is-horizontal" *ngIf=session>
+      <div class="field-label is-normal">
+        <label class="label">De :</label>
+      </div>
+      <div class="field-body">
+          <div class="control has-icons-left has-icons-right">
+              <input class="input is-info" type="email" value={{mail}} disabled>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+        </div>
+      </div>
+
+  
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Message</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea" placeholder="Votre message"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <!-- Left empty for spacing -->
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <button (click)="submit()" class="button is-primary">
+              Send message
+            </button>
+            <button class="button is-link is-light" routerLink="/ann">Cancel</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br><br>
+  
+
+  </section>
+  

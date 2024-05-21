@@ -1,0 +1,61 @@
+<nav class="navbar is-black"  role="navigation">
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="../../../assets/img/house5.jpg">
+          </a>
+        </div>
+        <a class="navbar-item" routerLink=''>
+          <i class="fas fa-home"></i>&nbsp;&nbsp;Accueil
+        </a>
+        <a class="navbar-item" routerLink=''>
+          <i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Boutique
+        </a>
+        <a class="navbar-item"*ngIf=!coachsession>
+          <i class="fas fa-user-friends"></i>&nbsp;&nbsp;Coaches
+        </a>
+        <a class="navbar-item"*ngIf=coachsession>
+          <i class="fas fa-user-friends"></i>&nbsp;&nbsp;Clients
+        </a>
+      </div>
+      <div class="navbar-end">
+        <a class="x navbar-item"routerLink=''*ngIf=sessionuser>
+          <i class="fas fa-comments"></i>&nbsp;&nbsp;Messages
+        </a>
+        <a class="x navbar-item"routerLink=''*ngIf=coachsession>
+          <i class="fas fa-comments"></i>&nbsp;&nbsp;Messages
+        </a>
+        <a class="x navbar-item"routerLink='req'*ngIf=!sessionadmin>
+          <i class="fas fa-tools"></i>&nbsp;&nbsp;Support
+        </a>
+        <div class="navbar-item has-dropdown  is-hoverable" *ngIf=!session>
+          <a class="navbar-link">
+            <i class="fas fa-user-alt"></i>
+          </a>
+  
+          <div class="drop2 navbar-dropdown is-right">
+            <button type="button" class="z navbar-item is-center" (click)="profil()" *ngIf=sessionuser>
+              Profil
+            </button>
+            <button type="button" class="z navbar-item is-center" (click)="profilcoach()" *ngIf=coachsession>
+              Profil
+            </button>
+            <button type="button" class="z navbar-item is-center"  *ngIf=sessionadmin>
+              Requettes
+            </button>
+            <button type="button" class="z navbar-item is-center"  *ngIf=sessionuser>
+              Mes Messages
+            </button>
+            <button type="button" class="z navbar-item is-center"  *ngIf=coachsession>
+              Mes Messages
+            </button>
+            <button type="button" class=" z navbar-item is-center" (click)="deconnexion()">
+              Deconnexion
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </nav>

@@ -1,0 +1,30 @@
+<div id="login">
+  <div class="login-card">
+
+    <div class="card-title">
+      <h1>Veuillez vous connectez</h1>
+    </div>
+
+    <div class="content">
+  <form [formGroup]="addform" #cf="ngForm">
+
+        <input id="text" type="text" name="cin" formControlName=cin title="cin" placeholder="CIN"  autofocus>
+        <input id="password" type="password" formControlName=mdp name="password" title="password" placeholder="Mot de passe" >
+
+        <div class="level options">
+          <div class="checkbox level-left">
+            <input type="checkbox" id="checkbox" class="regular-checkbox">
+            <label for="checkbox"></label>
+            <span>Se souvenir de moi
+            </span>
+          </div>
+
+          <a class="btn btn-link level-right" href="#">Mot de passe oublié?</a>
+        </div>
+
+        <button id="b1"type="submit" (click)="onSubmit()"class="btn btn-primary">Connexion</button>
+        <button id="b2" type="submit" (click)="add()" class="btn btn-primary">Inscription</button>
+      </form>
+    </div>
+    </div>
+  </div>

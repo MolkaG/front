@@ -1,0 +1,98 @@
+<section class="hero is-success is-bold ">
+    <div class="hero-body">
+      <div class="">
+        <h1 class="title">
+         Facture
+        </h1>
+      </div>
+    </div>
+  </section>
+<section class="section is-fullheight-with-navbar">
+    <div class="field is-horizontal is-fullheight-with-navbar">
+    <div class="field-label is-normal">
+      <label class="label">Acheteur</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <p class="control is-expanded has-icons-left">
+          <input disabled disabled class="input" type="text" placeholder="Name" value={{nomm}}>
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field-label is-normal">
+        <label class="label">Vendeur</label></div>
+      <div class="field">
+        <p class="control is-expanded has-icons-left has-icons-right">
+          <input disabled disabled class="input  " type="email" placeholder="Email" value= {{nom}}>
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="field is-horizontal is-fullheight-with-navbar">
+    <div class="field-label is-normal">
+      <label class="label">ID Annonce</label>
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <p class="control is-expanded has-icons-left">
+          <input disabled class="input" type="text" placeholder="Name" value=" {{house.ID_A}}">
+          <span class="icon is-small is-left">
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field-label is-normal">
+        <label class="label">Detail</label></div>
+      <div class="field">
+        <p class="control is-expanded has-icons-left has-icons-right">
+          <input disabled class="input  " type="email" placeholder="Email" value= {{house.detail}}>
+          <span class="icon is-small is-left">
+            <i class="fas fa-book"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field-label is-normal">
+        <label class="label">Type</label></div>
+      <div class="field">
+        <p class="control is-expanded has-icons-left has-icons-right">
+          <input disabled class="input  " type="email" placeholder="Email" value= {{house.Type_A}}>
+          <span class="icon is-small is-left">
+            <i class="fas fa-book-open"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+    <div class="field is-centered">
+    <div class="field has-addons has-addons-centered">
+        <p class="control">
+          <span class="select">
+            <select [(ngModel)]="selectedOption">
+                <option *ngFor="let o of options">
+                    {{o.name}}
+                 </option>
+            </select>
+          </span>
+        </p>
+          <p class="control  has-icons-left has-icons-right">
+            <input disabled class="input  " type="text" placeholder="text" value={{house.Loyer}}>
+            <span class="icon is-small is-left">
+              <i class="fas fa-dollar-sign"></i>
+            </span>
+        </p>
+      </div>
+      <div class="field is-centered">
+        <div class="field has-addons has-addons-centered">
+        <input *ngIf="selectedOption == 'Cheque'" [(ngModel)]="t" class="input  " type="text" placeholder="Numero de Compte">
+        </div>
+      </div>
+      <div class="buttons  is-centered">
+      <button (click)=enregistrer() class="button is-rounded is-success is-light is-outlined">Enregistrer</button>
+      <button (click)=annuler() class="button is-rounded is-danger is-light is-outlined">Annuler</button>
+      </div>
+      <br><br><br><br><br><br><br><br>

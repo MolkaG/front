@@ -1,0 +1,65 @@
+<section class="hero is-medium is-info  is-fullheight-with-navbar">
+    <div class="hero-body"*ngIf=session>
+      <div class="container has-text-centered">
+        <br>
+        <h1 class="title">
+       FI.TN.ESS
+        </h1>
+        <h2 class="subtitle">
+         Veuillez choisir une option
+        </h2>
+        <button routerLink="/add" class="button is-success">Inscription
+        </button>
+        <button routerLink="/home" class="button is-info">Connexion
+        </button>
+        <br>
+        <button routerLink="/addcoach" class="button is-warning">Inscription Coaching
+        </button>
+      </div>
+    </div>
+    <div class="hero-body"*ngIf=sessionuser>
+      <div class="container has-text-centered">
+        <h1 class="title">
+        <p>Bienvenue vous êtes connecté(e)</p>
+        </h1>
+        <h2 class="subtitle">
+         Veuillez choisir une option
+        </h2>
+        <button (click)="profil()" class="button is-success">Profil
+        </button>
+        <button routerLink="" class="button is-info">Consulter Coaches
+        </button>
+        <button routerLink="/req" class="button is-warning">Support
+        </button>
+      </div>
+    </div>
+    <div class="hero-body"*ngIf=coachsession>
+      <div class="container has-text-centered">
+        <h1 class="title">
+        <p>Bienvenue Coach </p>
+        </h1>
+        <h2 class="subtitle">
+         Veuillez choisir une option
+        </h2>
+        <button (click)="profil()" class="button is-success">Profil
+        </button>
+        <button routerLink="/req" class="button is-warning">Support
+        </button>
+      </div>
+    </div>
+    <div class="hero-body"*ngIf=sessionadmin>
+      <div class="container has-text-centered">
+        <h1 class="title">
+        Bienvenue Admin
+        </h1>
+        <h2 class="subtitle">
+         Veuillez choisir une option
+        </h2>
+        <button (click)="admin()" class="button is-success">Liste des Utilisateurs
+        </button>
+        <button routerLink="offre/{{x}}" class="button is-info">Liste des Coaches
+        </button>
+
+      </div>
+    </div>
+  </section>

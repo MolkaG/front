@@ -1,0 +1,24 @@
+/*.column{
+    padding: 20px;
+}
+.columns{
+    padding-block-end :10px;
+}
+.x{
+    background-color: hsl(171, 100%, 41%);
+}*/
+td,th{
+    font-size: large;
+    text-align: center;
+}
+.x{
+    position:absolute;
+    transition: .5s ease;
+    top: 48%;
+    left: 84%;
+    border-radius: 4rem;
+    
+}
+.panel{
+    border: blue($color: #000000);
+}

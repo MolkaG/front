@@ -1,0 +1,62 @@
+<section class="hero is-danger is-bold">
+    <div class="hero-body">
+      <div class="">
+        <h1 class="title">
+       Demandes
+        </h1>
+      </div>
+    </div>
+  </section>
+  <br>
+  <table class="table is-fullwidth is-fullheight-with-navbar">
+    <thead></thead>
+    <tbody class="has-text-centered ">
+    <tbody *ngFor="let std of coaches | filterBy:srch">
+      <tr>
+        <td rowspan="7">
+            <figure class="image is-128x128">
+              <img  class="" src={{std.img}}>
+            </figure>
+          </td>
+        <td class="is-size-5 has-text-centered"><b>CIN</b></td>
+        <td class="is-size-5 has-text-centered"><b>Nom</b></td>
+        <td class="is-size-5 has-text-centered"><b>Prenom</b></td>
+        <td class="is-size-5 has-text-centered"><b>Age</b></td>
+        <td class="is-size-5 has-text-centered"><b>Options</b></td>
+      </tr>
+      <tr>
+        <td class="has-text-centered">{{std.cin}}</td>
+        <td class="has-text-centered">{{std.nom}}</td>
+        <td class="has-text-centered">{{std.prenom}}</td>
+        <td class="has-text-centered">{{std.age}}</td>
+        <td rowspan="2"><input (click)="accept(std)" class="button is-info is-outlined is-rounded is-success is-light is-fullwidth is-fullheight" type="button" value="Accepter"></td>
+      </tr>
+      <tr>
+        <td class="is-size-5 has-text-centered"><b>Categorie</b></td>
+        <td class="is-size-5 has-text-centered"><b>Experience</b></td>
+        <td class="is-size-5 has-text-centered"><b>Tarif</b></td>
+        <td class="is-size-5 has-text-centered"></td>
+      </tr>
+      <tr>
+        <td class="has-text-centered">{{std.categorie}}</td>
+        <td class="has-text-centered">{{std.experience}}</td>
+        <td class="has-text-centered">{{std.tarif}}</td>
+        <td class="has-text-centered"></td>
+      </tr>
+      <tr>
+        <td class="is-size-5 has-text-centered"><b>E-mail</b></td>
+        <td class="is-size-5 has-text-centered"><b>Telephone</b></td><td></td><td></td>
+        <td rowspan="3"><input (click)="refuse(std)" class="button is-danger is-outlined is-rounded is-danger is-light is-fullwidth is-fullheight" type="button" value="Refuser"></td>
+      </tr>
+      <tr>
+        <td class="has-text-centered">{{std.email}}</td>
+        <td class="has-text-centered">{{std.tel}}</td>
+        <td></td><td></td>
+      </tr>
+      <tr></tr>
+      <br>
+
+</tbody>
+    <tfoot>
+    </tfoot>
+        
